@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:my_dgl_app/route/routes_magager.dart' as route;
 import '../classes/colors_provider.dart';
 
@@ -12,12 +12,9 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
- late bool _isLoading;
-
   @override
   void initState(){
     super.initState();
-    _isLoading = true;
     Future.delayed(
         const Duration(
           seconds: 10
@@ -52,12 +49,12 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             const Spacer(),
-            /*const SpinKitWaveSpinner(
+            const SpinKitWaveSpinner(
                 color: Colors.white,
               trackColor: Colors.black,
               waveColor: Colors.white,
               size: 75,
-            ),*/
+            ),
             const Spacer(),
             const Text("By Thinkers",
               style: TextStyle(

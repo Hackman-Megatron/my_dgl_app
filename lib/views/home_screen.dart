@@ -3,7 +3,7 @@ import 'package:my_dgl_app/classes/dad_model.dart';
 import 'package:my_dgl_app/views/edite_dad.dart';
 import 'package:flutter/material.dart';
 //import 'package:my_dgl_app/route/routes_magager.dart' as route;
-//import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 
 class HomeLand extends StatefulWidget {
   const HomeLand({super.key});
@@ -97,7 +97,7 @@ class _HomeLandState extends State<HomeLand> {
                   icon: Container(
                     height: 60,
                     width: 60,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: CouleurApplication.Couleurprimaire2,
                     ),
@@ -118,8 +118,8 @@ class _HomeLandState extends State<HomeLand> {
               decoration: BoxDecoration(
                   color: CouleurApplication.couleurSecondaire2,
                   borderRadius: BorderRadius.circular(25)),
-              child: Column(
-                children: const [
+              child: const Column(
+                children: [
                   SizedBox(height: 15,),
                   Text("Mark 10: 5-7",textAlign: TextAlign.start,
                     style: TextStyle(
@@ -187,13 +187,6 @@ class _HomeLandState extends State<HomeLand> {
                     ),
                     child: ListTile(
                       onTap: () async{
-                        final result = await Navigator.push(context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => EditDad(
-                              note: filteredNotes[index],
-                            ),
-                          ),
-                        );
                       },
                       title: RichText(
                         maxLines: 3,
@@ -215,7 +208,7 @@ class _HomeLandState extends State<HomeLand> {
                               ),
                             ]),
                       ),
-                      /*subtitle: Padding(
+                      subtitle: Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
                           DateFormat(
@@ -226,7 +219,7 @@ class _HomeLandState extends State<HomeLand> {
                               fontStyle: FontStyle.italic,
                               color: Colors.grey.shade800),
                         ),
-                      ),*/
+                      ),
                       trailing: IconButton(
                           onPressed: () {
                             deleteItem(index);
